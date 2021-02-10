@@ -75,7 +75,7 @@ public class RaceCarControllerIT {
                 .build();
         RaceCar raceCar1 = RaceCar.builder()
                 .nickname("nick name1")
-                .year("2020")
+                .year("2023")
                 .model("Jaguar")
                 .status("Available")
                 .owner("owner1")
