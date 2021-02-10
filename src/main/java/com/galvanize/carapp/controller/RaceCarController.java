@@ -1,18 +1,21 @@
 package com.galvanize.carapp.controller;
 
+import com.galvanize.carapp.model.RaceCar;
+import com.galvanize.carapp.service.RaceCarService;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/racecar")
+@AllArgsConstructor
 public class RaceCarController {
+
+    private RaceCarService raceCarService;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void createRaceCar(){
-
+    public RaceCar createRaceCar(@RequestBody RaceCar raceCar){
+        return raceCarService.createRaceCar(raceCar);
     }
 }
