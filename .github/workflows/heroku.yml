@@ -12,7 +12,9 @@ jobs:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.8.9 # This is the action
         with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}  # Defined in the repository Settings > Secrets
-          heroku_email: ${{secrets.HEROKU_EMAIL}}
+          #heroku_api_key: ${{secrets.HEROKU_API_KEY}}  # Defined in the repository Settings > Secrets
+          #heroku_email: ${{secrets.HEROKU_EMAIL}}
+          heroku_api_key: cada7886-9544-45c3-82ba-9738852fb01d  # Defined in the repository Settings > Secrets
+          heroku_email: srijan4friends@gmail.com
           heroku_app_name: "racecarapp" #Must be unique in Heroku
           usedocker: true
