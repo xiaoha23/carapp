@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
@@ -12,10 +13,10 @@ import javax.persistence.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@SequenceGenerator(name = "car_id_seq", sequenceName = "car_id_seq", allocationSize = 1)
 public class RaceCar {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "car_id_seq")
+    @GeneratedValue(strategy= GenerationType.AUTO,generator="native")
+    @GenericGenerator(name = "native",strategy = "native")
     private Long id;
     private String nickname;
     private String model;
