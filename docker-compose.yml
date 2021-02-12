@@ -3,20 +3,20 @@ services:
   postgresdb:
     image: postgres
     environment:
-      POSTGRES_USER: postgres
+      POSTGRES_USER: speedy
       POSTGRES_PASSWORD: notsecure
       POSTGRES_DB: carapp_db
   carapp:
     build: .
     environment:
       DB_HOST: postgresdb
-      DB_USER: postgres
+      DB_USER: speedy
       DB_PASSWORD: notsecure
       DB_NAME: carapp_db
     depends_on:
       - postgresdb
     ports:
-      - "5432:5432"
+      - "8080:8080"
 
 volumes:
   carapp_volume: {}
