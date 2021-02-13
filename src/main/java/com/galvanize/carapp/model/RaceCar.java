@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.UUID;
 
 @Entity
 @Data
@@ -15,9 +16,8 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class RaceCar {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO,generator="native")
-    @GenericGenerator(name = "native",strategy = "native")
-    private Long id;
+    @GeneratedValue
+    private UUID id;
     private String nickname;
     private String model;
     private String year;
